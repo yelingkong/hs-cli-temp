@@ -90,8 +90,8 @@ class View extends EventTarget {
   setViewport (x, y, width, height) {
     this.scale = Math.min(this.width / width, this.height / height)
 
-    this.x = (this.width - this.scale * width) / 2 - x
-    this.y = (this.height - this.scale * height) / 2 - y
+    this.x = (this.width - this.scale * width) / 2 - x * this.scale
+    this.y = (this.height - this.scale * height) / 2 - y * this.scale
   }
 
   setPosition (x, y) {
