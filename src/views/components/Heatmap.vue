@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import cvs from '@/components/cvs'
+import cvs from '@yukun.bao/cvs'
 
 export default {
   data () {
@@ -18,13 +18,11 @@ export default {
 
   methods: {
     init () {
-      this.view = cvs.init(this.$el, {
-        backgroundColor: '#f0f0f0',
+      this.view = new cvs.View(this.$el, {
+        background: '#f0f0f0',
         width: 500,
         height: 300,
-        onAnimation: false,
-        zoomable: false,
-        draggable: false
+        roam: true
       })
 
       this.initHeatMap()
@@ -43,9 +41,9 @@ export default {
           value: Math.round(Math.random() * 100)
         })
       }
-      const heatMap = new cvs.HeatMap({ map: this.view, radius: 30, opacity: [0, 0.2] })
+      const heatMap = new cvs.HeatMapLayer({ radius: 30, opacity: [0, 0.2] })
       heatMap.setData(heatMapData)
-      this.view.heatMap = heatMap
+      this.view.addLayer(heatMap)
     }
   }
 }

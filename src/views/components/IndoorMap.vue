@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import cvs from '@/components/cvs'
+import cvs from '@yukun.bao/cvs'
 
 export default {
   data () {
@@ -18,10 +18,11 @@ export default {
 
   methods: {
     init () {
-      this.view = cvs.init(this.$el, {
-        backgroundColor: '#fff',
+      this.view = new cvs.View(this.$el, {
+        background: '#fff',
         width: 500,
-        height: 300
+        height: 300,
+        roam: true
       })
 
       this.initIndoorMap()
@@ -37,24 +38,14 @@ export default {
           type: 'Polygone',
           stroke: 'rgba(255,182,177,.59)',
           lineWidth: 1,
-          points: [
-            [0, 0],
-            [600, 0],
-            [600, 400],
-            [0, 400]
-          ]
+          points: [0, 0, 600, 0, 600, 400, 0, 400]
         },
         {
           type: 'Polygone',
           stroke: '#FFB6B1',
           fill: '#FFFDF6',
           lineWidth: 1,
-          points: [
-            [8, 8],
-            [592, 8],
-            [592, 392],
-            [8, 392]
-          ]
+          points: [8, 8, 592, 8, 592, 392, 8, 392]
         },
         {
           type: 'Polygone',
@@ -62,12 +53,7 @@ export default {
           fill: 'rgba(255,255,255,.6)',
           lineWidth: 1,
           lineDash: [2, 2],
-          points: [
-            [30, 30],
-            [270, 30],
-            [270, 300],
-            [30, 300]
-          ]
+          points: [30, 30, 270, 30, 270, 300, 30, 300]
         },
         {
           x: 300,
@@ -77,12 +63,7 @@ export default {
           fill: 'rgba(255,255,255,.6)',
           lineWidth: 1,
           lineDash: [2, 2],
-          points: [
-            [30, 30],
-            [270, 30],
-            [270, 300],
-            [30, 300]
-          ]
+          points: [30, 30, 270, 30, 270, 300, 30, 300]
         },
         {
           type: 'Text',
@@ -107,72 +88,49 @@ export default {
         {
           type: 'Polyline',
           stroke: '#FF7716',
-          points: [
-            [200, 392],
-            [200, 360]
-          ]
+          points: [200, 392, 200, 360]
         },
         {
           type: 'Polyline',
           stroke: '#FF7716',
-          points: [
-            [220, 392],
-            [220, 360]
-          ]
+          points: [220, 392, 220, 360]
         },
         {
           type: 'Polyline',
           stroke: '#FF7716',
-          points: [
-            [280, 392],
-            [280, 360]
-          ]
+          points: [280, 392, 280, 360]
         },
         {
           type: 'Polyline',
           stroke: '#FF7716',
-          points: [
-            [300, 392],
-            [300, 360]
-          ]
+          points: [300, 392, 300, 360]
         },
         {
           type: 'Polyline',
           stroke: '#FF7716',
-          points: [
-            [320, 392],
-            [320, 360]
-          ]
+          points: [320, 392, 320, 360]
         },
         {
           type: 'Polyline',
           stroke: '#FF7716',
-          points: [
-            [380, 392],
-            [380, 360]
-          ]
+          points: [380, 392, 380, 360]
         },
         {
           type: 'Polyline',
           stroke: '#FF7716',
-          points: [
-            [400, 392],
-            [400, 360]
-          ]
+          points: [400, 392, 400, 360]
         },
         {
           type: 'Polyline',
           stroke: '#FF7716',
-          points: [
-            [480, 392],
-            [480, 360]
-          ]
+          points: [480, 392, 480, 360]
         },
         {
           type: 'Text',
           content: '收银台',
           x: 250,
           y: 370,
+          fill: '#333333',
           textAlign: 'center'
         },
         {
@@ -180,6 +138,7 @@ export default {
           content: '收银台',
           x: 350,
           y: 370,
+          fill: '#333333',
           textAlign: 'center'
         },
         {
@@ -187,6 +146,7 @@ export default {
           content: '入口',
           x: 440,
           y: 370,
+          fill: '#333333',
           textAlign: 'center'
         },
         {
@@ -234,6 +194,7 @@ export default {
           content: '堆头',
           x: 300,
           y: 70,
+          fill: '#333333',
           textAlign: 'center',
           textBaseline: 'middle'
         },
@@ -242,6 +203,7 @@ export default {
           content: '堆头',
           x: 300,
           y: 130,
+          fill: '#333333',
           textAlign: 'center',
           textBaseline: 'middle'
         },
@@ -250,6 +212,7 @@ export default {
           content: '堆头',
           x: 300,
           y: 190,
+          fill: '#333333',
           textAlign: 'center',
           textBaseline: 'middle'
         },
@@ -258,6 +221,7 @@ export default {
           content: '堆头',
           x: 300,
           y: 250,
+          fill: '#333333',
           textAlign: 'center',
           textBaseline: 'middle'
         }
